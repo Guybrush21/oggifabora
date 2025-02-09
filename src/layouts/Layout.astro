@@ -1,3 +1,7 @@
+---
+import Header from "./Header.astro";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,19 +10,13 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Oggi fa bora</title>
-    <meta name="description" content="Il podcast che ti racconta quello che fa muovere Trieste e i suoi dintorni"/>
+    <meta
+      name="description"
+      content="Il podcast che ti racconta quello che fa muovere Trieste e i suoi dintorni"
+    />
   </head>
   <body>
-    <header>
-      <h1>Oggi fa bora</h1>
-      <nav>
-        <ul>
-          <li><a href="/episodes">Episodi</a></li>
-          <!--<li><a href="/last-episode">Last Episode</a></li>-->
-          <li><a href="/about-us">A proposito di noi</a></li>
-        </ul>
-      </nav>
-    </header>
+    <Header />
     <main>
       <slot />
     </main>
