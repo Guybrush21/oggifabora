@@ -1,5 +1,24 @@
 ---
+import Episode from "../components/Episode.astro";
 import Layout from "../layouts/Layout.astro";
+
+const episodes = Object.values(
+import.meta.glob("./episodes/*.md", { eager: true }),
+);
 ---
 
-<Layout />
+<Layout>
+  <article>
+    <h2>Episodi</h2>
+    <ul>
+      {
+        episodes.map((e) => (
+          <li>
+            <a href={e.url}>{e.frontmatter.title}</a>
+          </li>
+        ))
+      }
+
+    </ul>
+  </article>
+</Layout>
