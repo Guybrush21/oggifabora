@@ -1,12 +1,38 @@
 ---
-import Layout from "../layouts/Layout.astro";
-const { title, description, date } = Astro.props;
+const {
+  title,
+  description,
+  date,
+  src = "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-9-18/c3ffcc01-dbc2-95c7-c402-556b98e7490d.mp3",
+} = Astro.props;
 ---
 
-<Layout>
+<current-episode data-title={title} data-src={src}>
   <article>
     <h2>{title}</h2>
     <p>{description}</p>
     <time>{date}</time>
+    <div id="player"></div>
   </article>
-</Layout>
+</current-episode>
+
+<script>
+  import "shikwasa/dist/style.css";
+
+  import { Player } from "shikwasa";
+
+  class CurrentEpisode extends HTMLElement {
+    connectedCallback() {
+      const player = new Player({
+        container: () => document.querySelector("#player"),
+        audio: {
+          title: this.dataset.title,
+          artist: "Oggi fa bora",
+          cover: "/logo.png",
+          src: this.dataset.src,
+        },
+      });
+    }
+  }
+  customElements.define("current-episode", CurrentEpisode);
+</script>

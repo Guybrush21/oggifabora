@@ -6,16 +6,19 @@ import Header from "./Header.astro";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>Oggi fa bora</title>
     <meta
       name="description"
       content="Il podcast che ti racconta quello che fa muovere Trieste e i suoi dintorni"
     />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
-  <body class="bg-adriatic-500 text-white container mx-auto py-5">
+  <body class="bg-adriatic-500 text-white py-5">
     <Header />
     <hr class="w-full h-2 bg-white my-2" />
     <main>

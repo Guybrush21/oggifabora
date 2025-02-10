@@ -1,5 +1,27 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import logo from "../assets/logo.png";
 ---
 
-<Layout />
+<Layout>
+  <div class="max-w-md mx-auto">
+    <section>
+      <h2 class="font-bold text-2xl">Oggi fa bora</h2>
+      <p>
+        Il podcast che ti racconta quello che fa muovere Trieste e i suoi
+        dintorni.
+      </p>
+      <p>
+        Ascoltaci su <a href="https://open.spotify.com" class="underline"
+          >Spotify</a
+        >, e sulle principali piattaforme di podcast.
+      </p>
+      <Image
+        src={logo}
+        alt="Oggi fa bora"
+        class="mt-4 w-auto border-4 rounded-lg"
+      />
+    </section>
+  </div>
+</Layout>
