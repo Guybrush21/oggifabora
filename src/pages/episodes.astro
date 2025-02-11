@@ -12,7 +12,7 @@ const episodes = await getCollection("episodes");
       {
         episodes.map((e) => (
           <li>
-        <a href=`episodes/${e.id}`>{e.data.title}</a>
+        <a href=`/episodes/${e.id}`>{e.data.title}</a>
           </li>
         ))
       }
