@@ -1,10 +1,8 @@
 ---
-import Episode from "../components/Episode.astro";
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
-const episodes = Object.values(
-import.meta.glob("./episodes/*.md", { eager: true }),
-);
+const episodes = await getCollection("episodes");
 ---
 
 <Layout>
@@ -14,11 +12,10 @@ import.meta.glob("./episodes/*.md", { eager: true }),
       {
         episodes.map((e) => (
           <li>
-            <a href={e.url}>{e.frontmatter.title}</a>
+        <a href=`episodes/${e.id}`>{e.data.title}</a>
           </li>
         ))
       }
-
     </ul>
   </article>
 </Layout>

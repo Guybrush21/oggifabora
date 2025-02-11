@@ -1,0 +1,34 @@
+{
+  "$ref": "#/definitions/podcast",
+  "definitions": {
+    "podcast": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "guest": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "guest",
+        "description",
+        "url"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,26 @@
+---
+import Episode from "../../components/Episode.astro";
+
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import type { InferGetStaticPropsType } from "astro";
+
+export async function getStaticPaths() {
+  const episodes = await getCollection("episodes");
+
+  const paths = episodes.map((episode) => ({
+    params: { id: episode.id },
+    props: { episode },
+  }));
+
+  return paths;
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { episode } = Astro.props;
+---
+
+<Layout>
+  <Episode episode={episode.data} />
+</Layout>

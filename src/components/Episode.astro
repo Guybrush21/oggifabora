@@ -1,20 +1,23 @@
 ---
-const {
-  title,
-  description,
-  date,
-  src = "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2024-9-18/c3ffcc01-dbc2-95c7-c402-556b98e7490d.mp3",
-} = Astro.props;
+import type { Episode } from "../content.config";
+interface Props {
+  episode: Episode;
+}
+const { episode } = Astro.props;
 ---
 
-<current-episode data-title={title} data-src={src}>
-  <article>
-    <h2>{title}</h2>
-    <p>{description}</p>
-    <time>{date}</time>
+<article class="flex flex-col gap-4">
+  <header>
+    <h2>{episode.id}. {episode.title}</h2>
+    <p>con: {episode.guest}</p>
+  </header>
+
+  <p>{episode.description}</p>
+
+  <current-episode data-title={episode.title} data-src={episode.url}>
     <div id="player"></div>
-  </article>
-</current-episode>
+  </current-episode>
+</article>
 
 <script>
   import "shikwasa/dist/style.css";
@@ -31,6 +34,7 @@ const {
           cover: "/logo.png",
           src: this.dataset.src,
         },
+        themeColor: "#D62828",
       });
     }
   }

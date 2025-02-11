@@ -1,0 +1,38 @@
+{
+  "$ref": "#/definitions/episodes",
+  "definitions": {
+    "episodes": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "guest": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "guest",
+        "id",
+        "description",
+        "url"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
