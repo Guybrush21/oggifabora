@@ -1,21 +1,21 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-
+import EpisodeLink from "../components/EpisodeLink.astro";
 const episodes = await getCollection("episodes");
 ---
 
 <Layout>
   <article>
     <h2>Episodi</h2>
-    <ul>
+    <ol>
       {
-        episodes.map((e) => (
+        episodes.map((e, i) => (
           <li>
-        <a href=`/episodes/${e.id}`>{e.data.title}</a>
+            <EpisodeLink order={i} episode={e.data} id={e.id} />
           </li>
         ))
       }
-    </ul>
+    </ol>
   </article>
 </Layout>

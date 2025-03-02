@@ -1,3 +1,3 @@
 h2 {
-  @apply text-2xl;
+  @apply text-2xl text-astronaut-50 bg-astronaut-900 p-2;
 }
