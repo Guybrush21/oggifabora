@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate-data": "tsx scripts/generate-data.ts"
   },
   "dependencies": {
     "@astrojs/tailwind": "^6.0.0",
@@ -17,6 +18,9 @@
   },
   "devDependencies": {
     "prettier": "^3.4.2",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "rss-parser": "^3.13.0",
+    "slugify": "^1.6.6",
+    "tsx": "^4.19.3"
   }
 }

@@ -10,9 +10,9 @@ const episodes = await getCollection("episodes");
     <h2>Episodi</h2>
     <ol>
       {
-        episodes.map((e, i) => (
+        episodes.map((e) => (
           <li>
-            <EpisodeLink order={i} episode={e.data} id={e.id} />
+            <EpisodeLink order={e.id} episode={e.data} id={e.id} />
           </li>
         ))
       }

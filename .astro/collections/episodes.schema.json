@@ -7,9 +7,6 @@
         "title": {
           "type": "string"
         },
-        "guest": {
-          "type": "string"
-        },
         "id": {
           "type": "integer"
         },
@@ -20,13 +17,15 @@
           "type": "string",
           "format": "uri"
         },
+        "guest": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }
       },
       "required": [
         "title",
-        "guest",
         "id",
         "description",
         "url"

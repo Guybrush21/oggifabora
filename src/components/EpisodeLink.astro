@@ -2,12 +2,11 @@
 import type { Episode } from "../content.config";
 interface Props {
   episode: Episode;
-  order: number;
   id: string;
 }
-const { episode, order, id } = Astro.props;
+const { episode, id } = Astro.props;
 
-const title = `${order + 1}. ${episode.title}`;
+const title = `${episode.id}. ${episode.title}`;
 ---
 
 <a href={`/episodes/${id}`}> {title} </a>

@@ -1,3 +1,7 @@
 h2 {
   @apply text-2xl text-astronaut-50 bg-astronaut-900 p-2;
 }
+
+h3 {
+  @apply text-3xl text-astronaut-50 bg-astronaut-900 p-2;
+}

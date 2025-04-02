@@ -8,18 +8,13 @@ const { episode } = Astro.props;
 
 <article class="flex flex-col gap-4">
   <header>
-    <h3 class="text-base text-white bg-astronaut-900">{episode.title}</h3>
+    <h3>
+      <span class="m-2 text-trieste-red-700 bg-astronaut-300"
+        >{episode.id}.</span
+      >{episode.title}
+    </h3>
   </header>
-  <details open class="border-trieste-red-500 border-2 p-2">
-    <summary>Dettagli dell'episodio</summary>
-    <p>
-      ospite:
-      {episode.guest}
-    </p>
-    <p>
-      episodio #{episode.id}
-    </p>
-  </details>
+
   <p>{episode.description}</p>
   <current-episode data-title={episode.title} data-src={episode.url}>
     <div id="player"></div>

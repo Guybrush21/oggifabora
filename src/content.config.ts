@@ -4,10 +4,10 @@ import { glob } from "astro/loaders";
 
 const episodeSchema = z.object({
   title: z.string(),
-  guest: z.string(),
   id: z.number().int(),
   description: z.string(),
   url: z.string().url(),
+  guest: z.string().optional(),
 });
 
 export type Episode = z.infer<typeof episodeSchema>;
