@@ -20,6 +20,8 @@ async function generate() {
     if (!item.title) throw new Error("Item title is missing");
     if (!item.contentSnippet) throw new Error("Item contentSnippet is missing");
     if (!item.enclosure?.url) throw new Error("Item enclosure URL is missing");
+    if (!item.itunes?.image) throw new Error("Item image URL is missing");
+    if (!item.isoDate) throw new Error("Item isoDate is missing");
 
     const slug = slugify(item.title, { lower: true, strict: true });
     const fileName = `${i}-${slug}.md`;
@@ -29,10 +31,12 @@ id: ${i}
 title: "${item.title}"
 description: "${item.contentSnippet}"
 url: "${item.enclosure?.url}" 
+image: "${item.itunes?.image}"
+published: "${item.isoDate}"
 ---`;
 
     await fs.writeFile(path.join(contentDir, fileName), markdown, {
-      flag: "wx", // 'wx' flag to ensure the file is created and not overwritte
+      flag: "w", // 'wx' flag to ensure the file is created and not overwritte
     });
     console.log(`Generated file: ${fileName}`);
     i--;

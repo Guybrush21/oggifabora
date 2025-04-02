@@ -17,8 +17,13 @@
           "type": "string",
           "format": "uri"
         },
-        "guest": {
-          "type": "string"
+        "image": {
+          "type": "string",
+          "format": "uri"
+        },
+        "published": {
+          "type": "string",
+          "format": "date-time"
         },
         "$schema": {
           "type": "string"
@@ -28,7 +33,8 @@
         "title",
         "id",
         "description",
-        "url"
+        "url",
+        "published"
       ],
       "additionalProperties": false
     }

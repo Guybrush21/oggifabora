@@ -13,10 +13,26 @@ const { episode } = Astro.props;
         >{episode.id}.</span
       >{episode.title}
     </h3>
+    <p class="text-sm">
+      pubblicato il
+      <span>
+        {
+          new Date(episode.published).toLocaleDateString("it-IT", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }
+      </span>
+    </p>
   </header>
 
   <p>{episode.description}</p>
-  <current-episode data-title={episode.title} data-src={episode.url}>
+  <current-episode
+    data-title={episode.title}
+    data-src={episode.url}
+    data-cover={episode.image}
+  >
     <div id="player"></div>
   </current-episode>
 </article>
@@ -33,7 +49,7 @@ const { episode } = Astro.props;
         audio: {
           title: this.dataset.title,
           artist: "Oggi fa bora",
-          cover: "/logo.png",
+          cover: `${this.dataset.cover ?? "/logo.webp"}`,
           src: this.dataset.src,
         },
         themeColor: "#D62828",

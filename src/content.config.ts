@@ -7,7 +7,8 @@ const episodeSchema = z.object({
   id: z.number().int(),
   description: z.string(),
   url: z.string().url(),
-  guest: z.string().optional(),
+  image: z.string().url().optional(),
+  published: z.string().datetime(),
 });
 
 export type Episode = z.infer<typeof episodeSchema>;
