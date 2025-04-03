@@ -10,6 +10,7 @@
     "generate-data": "tsx scripts/generate-data.ts"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.3.0",
     "@astrojs/tailwind": "^6.0.0",
     "@tailwindcss/vite": "^4.0.5",
     "astro": "^5.1.8",
