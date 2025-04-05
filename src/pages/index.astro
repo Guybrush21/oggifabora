@@ -2,23 +2,32 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import logo from "../assets/logo.webp";
+import Link from "../components/Link.astro";
 ---
 
 <Layout>
   <div>
-    <section>
+    <section class="flex flex-col justify-center text-justify space-y-4">
       <h2>Oggi fa bora</h2>
       <p>
         Il podcast che ti racconta quello che fa muovere Trieste e i suoi
         dintorni.
       </p>
       <p>
-        Ascoltaci su <a
-          href="https://open.spotify.com/show/21XphXWp2fuYShhpgzs6pN"
-          class="underline px-2 bg-trieste-red-800 text-astronaut-50">Spotify</a
-        >, e sulle principali piattaforme di podcast.
+        Vi facciamo sentire le voci di chi, da dietro le quinte, si prende cura
+        della città di Trieste e del suo territorio. Storie di persone,
+        associazioni e organizzazioni che contribuiscono ogni giorno al
+        funzionamento e alla crescita della comunità.
+      </p>
+      <p>
+        Ascoltaci su <Link
+          link="https://open.spotify.com/show/21XphXWp2fuYShhpgzs6pN"
+          text="Spotify"
+        />
+        e sulle principali piattaforme di podcast o direttamente su
+        <Link link="/episodes" text="questo sito" />
       </p>
       <Image src={logo} alt="Oggi fa bora" class="mt-4 w-auto rounded-lg" />
     </section>
-  </div>
-</Layout>
+  </div></Layout
+>

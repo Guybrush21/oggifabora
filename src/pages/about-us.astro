@@ -3,17 +3,25 @@ import Layout from "../layouts/Layout.astro";
 const about = {
   title: "Chi siamo",
   description:
-    "Teresa Codaglio e Nicholas Pellizer ti portano ogni mese alla scoperta di chi lavora dietro le quinte della città e del suo territorio. Storie di persone, associazioni e organizzazioni che, magari lontano dai riflettori, contribuiscono ogni giorno al funzionamento e alla crescita della comunità. ",
+    "Teresa Codaglio e Nicholas Pellizer ti portano alla scoperta di chi si prende cura della città di Trieste e del suo territorio. Storie di persone, associazioni e organizzazioni che, magari lontano dai riflettori, contribuiscono ogni giorno al funzionamento e alla crescita della comunità. ",
 };
 ---
 
 <Layout>
-  <article>
+  <article class="flex flex-col gap-4">
     <header>
       <h2>{about.title}</h2>
     </header>
     <p>
       {about.description}
+    </p>
+
+    <p>
+      Restate aggiornati seguendo il nostro Instagram, che poi ci potete anche
+      contattare da li. E se volete scriverci tanto tanto potete provare a farlo
+      all'indirizzo info<span class="italic underline underline-offset-2"
+        >~~chiocciola~~</span
+      >oggifabora.it
     </p>
   </article>
 </Layout>

@@ -13,7 +13,7 @@ const episodes = await getCollection("episodes");
         episodes
           .sort((e) => e.data.id)
           .map((e) => (
-            <li>
+            <li class="my-2 underline hover:text-red-600">
               <EpisodeLink episode={e.data} id={e.id} />
             </li>
           ))
