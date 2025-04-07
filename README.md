@@ -1,8 +1,6 @@
-# Oggi fa bora - Podcast Website
+# Oggi fa bora - Podcast Astro Website
 
 A simple, elegant podcast website built with Astro and Tailwind CSS. This site automatically fetches and displays episode data from your podcast's RSS feed.
-
-![Preview](./preview.png)
 
 ## Features
 
@@ -105,6 +103,14 @@ To customize for your own podcast:
 - Update podcast details in `Layout.astro`
 - Replace the logo in `src/assets/`
 - Adjust the color scheme in `tailwind.config.mjs`
+
+## Screenshots
+
+![Home](/images/home.png)
+
+![Episodes page](/images/episodes.png)
+
+![Player inside single episode](/images/player.png)
 
 ## License
 
