@@ -2,7 +2,7 @@
 
 A simple, elegant podcast website built with Astro and Tailwind CSS. This site automatically fetches and displays episode data from your podcast's RSS feed.
 
-![Preview](./src/assets/preview.webp)
+![Preview](./preview.png)
 
 ## Features
 
