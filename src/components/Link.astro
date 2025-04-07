@@ -1,13 +1,21 @@
 ---
-interface Props {
-  link: string;
-  text: string;
+export interface Props {
+  href: string;
+  target?: string;
+  rel?: string;
+  className?: string;
 }
-const { link, text } = Astro.props;
+
+const { href, target, rel, className } = Astro.props;
+const isExternal = href.startsWith("http");
+const defaultRel = isExternal ? "noopener" : undefined;
+const defaultClass = `inline-block text-trieste-red-700 underline hover:no-underline`;
 ---
 
 <a
-  href={link}
-  class="underline hover:no-underline px-1 bg-trieste-red-800 text-astronaut-50"
-  >{text}</a
->
+  href={href}
+  target={target ?? (isExternal ? "_blank" : "_self")}
+  rel={rel ?? defaultRel}
+  class={className ?? defaultClass}
+  ><slot />
+</a>

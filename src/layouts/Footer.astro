@@ -1,0 +1,18 @@
+---
+import Link from "../components/Link.astro";
+import { podcastLinks } from "../data/site-info";
+---
+
+<footer class="p-6 text-sm text-center relative bottom-0">
+  <p>
+    Seguici su: <div class="flex justify-center gap-4">
+      {
+        podcastLinks.map((link) => (
+          <Link href={link.url} target="_blank" rel="noopener noreferrer">
+            {link.name}
+          </Link>
+        ))
+      }
+    </div>
+  </p>
+</footer>

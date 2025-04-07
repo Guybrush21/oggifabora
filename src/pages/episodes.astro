@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import EpisodeLink from "../components/EpisodeLink.astro";
+import Link from "../components/Link.astro";
 const episodes = await getCollection("episodes");
 ---
 
@@ -13,8 +13,10 @@ const episodes = await getCollection("episodes");
         episodes
           .sort((e) => e.data.id)
           .map((e) => (
-            <li class="my-2 underline hover:text-red-600">
-              <EpisodeLink episode={e.data} id={e.id} />
+            <li class="my-2">
+              <Link href={`/episodes/${e.id}`}>
+                {e.data.id}. {e.data.title}
+              </Link>
             </li>
           ))
       }
