@@ -21,10 +21,11 @@ import "../styles/global.css";
     <link rel="manifest" href="/site.webmanifest" />
   </head>
 
-  <body class="h-dvh py-5 text-xl font-mono">
+  <body
+    class="mx-auto h-dvh py-5 text-l px-4 font-mono xl:px-0 xl:text-xl xl:max-w-lg"
+  >
     <Header />
-    <hr class="w-full h-2 my-2" />
-    <main class="max-w-md mx-auto">
+    <main>
       <slot />
     </main>
   </body>
