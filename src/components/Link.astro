@@ -9,7 +9,7 @@ export interface Props {
 const { href, target, rel, className } = Astro.props;
 const isExternal = href.startsWith("http");
 const defaultRel = isExternal ? "noopener" : undefined;
-const defaultClass = `inline-block text-trieste-red-700 underline hover:no-underline`;
+const defaultClass = `inline-block text-primary-700 underline hover:no-underline`;
 ---
 
 <a

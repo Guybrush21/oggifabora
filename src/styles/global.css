@@ -1,5 +1,5 @@
 h2 {
-  @apply text-3xl bg-trieste-red-800 text-trieste-red-50 my-2 p-2;
+  @apply text-3xl bg-primary-800 text-primary-50 my-2 p-2;
 }
 
 h3 {

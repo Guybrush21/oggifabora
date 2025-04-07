@@ -1,10 +1,12 @@
 ---
+import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 const about = {
   title: "Chi siamo",
   description:
     "Teresa Codaglio e Nicholas Pellizer ti portano alla scoperta di chi si prende cura della città di Trieste e del suo territorio. Storie di persone, associazioni e organizzazioni che, magari lontano dai riflettori, contribuiscono ogni giorno al funzionamento e alla crescita della comunità. ",
 };
+import { siteInfo, socialLinks } from "../data/site-info";
 ---
 
 <Layout>
@@ -17,11 +19,14 @@ const about = {
     </p>
 
     <p>
-      Restate aggiornati seguendo il nostro Instagram, che poi ci potete anche
-      contattare da li. E se volete scriverci tanto tanto potete provare a farlo
-      all'indirizzo info<span class="italic underline underline-offset-2"
-        >~~chiocciola~~</span
-      >oggifabora.it
+      Restate aggiornati seguendo il nostro <Link
+        href={socialLinks.find((s) => s.name === "Instagram")?.url || "#"}
+        >Instagram</Link
+      >
+      , che poi ci potete anche contattare da li. E se volete scriverci una lettera
+      lunga potete farlo all'indirizzo <Link href=`mailto:${siteInfo.email}`
+        >{siteInfo.email}</Link
+      >
     </p>
   </article>
 </Layout>

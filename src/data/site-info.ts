@@ -2,6 +2,7 @@ export const siteInfo = {
   title: "Oggi fa bora",
   description:
     "Il podcast che ti racconta quello che fa muovere Trieste e i suoi dintorni",
+  email: "info@oggifabora.it",
 };
 
 export const socialLinks = [
