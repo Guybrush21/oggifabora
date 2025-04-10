@@ -18,6 +18,12 @@ import { siteInfo } from "../data/site-info";
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:title" content={siteInfo.title} />
+    <meta property="og:description" content={siteInfo.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteInfo.url} />
+    <meta property="og:image" content="/logo.webp" />
   </head>
 
   <body
