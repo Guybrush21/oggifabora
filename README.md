@@ -100,9 +100,10 @@ The site uses a data pipeline to:
 
 To customize for your own podcast:
 
-- Update podcast details in `Layout.astro`
-- Replace the logo in `src/assets/`
+- Update `data/site-info.ts` file with all your data
+- Replace the logo in `src/assets/` and `public` folders
 - Adjust the color scheme in `tailwind.config.mjs`
+- Change the content where you need it
 
 ## Screenshots
 
