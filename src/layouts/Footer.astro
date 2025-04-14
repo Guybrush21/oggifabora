@@ -1,18 +1,24 @@
 ---
 import Link from "../components/Link.astro";
-import { podcastLinks } from "../data/site-info";
+import { podcastLinks, socialLinks } from "../data/site-info";
+import { Image } from "astro:assets";
+import FooterLink from "./widgets/FooterLink.astro";
 ---
 
-<footer class="p-6 text-sm text-center relative bottom-0">
-  <p>
-    Seguici su: <div class="flex justify-center gap-4">
-      {
-        podcastLinks.map((link) => (
-          <Link href={link.url} target="_blank" rel="noopener noreferrer">
-            {link.name}
-          </Link>
-        ))
-      }
+<footer class="p-6 text-sm relative bottom-0 text-center">
+  <div class="flex flex-col items-center justify-evenly w-full gap-4">
+    <div class="w-full">
+      Ascoltaci su:
+      <div class="flex justify-evenly gap-4">
+        {podcastLinks.map((link) => <FooterLink link={link} />)}
+      </div>
     </div>
-  </p>
+    <div class="w-full">
+      e seguici qui:<div class="flex
+      justify-evenly
+      gap-4">
+        {socialLinks.map((link) => <FooterLink link={link} />)}
+      </div>
+    </div>
+  </div>
 </footer>
