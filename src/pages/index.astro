@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import logo from "../assets/logo.webp";
 import Link from "../components/Link.astro";
 import { getCollection } from "astro:content";
-import { formatDistanceToNow, subDays } from "date-fns";
+import { formatDistanceToNow } from "date-fns";
 import { it } from "date-fns/locale";
 const episodes = await getCollection("episodes");
 const last = episodes

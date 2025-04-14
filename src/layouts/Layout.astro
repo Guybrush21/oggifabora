@@ -3,6 +3,11 @@ import Header from "./Header.astro";
 import "../styles/global.css";
 import Footer from "./Footer.astro";
 import { siteInfo } from "../data/site-info";
+
+import type { PageInfo } from "../types.ts";
+type Props = { meta?: PageInfo };
+const { meta = { title: siteInfo.title, description: siteInfo.description } } =
+  Astro.props;
 ---
 
 <!doctype html>
@@ -11,8 +16,8 @@ import { siteInfo } from "../data/site-info";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>{siteInfo.title}</title>
-    <meta name="description" content={siteInfo.description} />
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

@@ -7,9 +7,15 @@ const about = {
     "Teresa Codaglio e Nicholas Pellizer ti portano alla scoperta di chi si prende cura della città di Trieste e del suo territorio. Storie di persone, associazioni e organizzazioni che, magari lontano dai riflettori, contribuiscono ogni giorno al funzionamento e alla crescita della comunità. ",
 };
 import { siteInfo, socialLinks } from "../data/site-info";
+import type { PageInfo } from "../types";
+
+const meta: PageInfo = {
+  title: `${siteInfo.title} - Chi siamo`,
+  description: "Le menti triestine dietro al podcast indipentente Oggi fa bora",
+};
 ---
 
-<Layout>
+<Layout meta={meta}>
   <article class="flex flex-col gap-4">
     <header>
       <h2>{about.title}</h2>

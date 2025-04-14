@@ -1,7 +1,7 @@
 ---
-import type { FooterLink } from "../../data/site-info";
+import type { ExternalLink } from "../../types";
 const { link } = Astro.props;
-type Props = { link: FooterLink };
+type Props = { link: ExternalLink };
 import Link from "../../components/Link.astro";
 import { Image } from "astro:assets";
 ---

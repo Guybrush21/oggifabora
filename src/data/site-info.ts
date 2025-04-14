@@ -4,6 +4,7 @@ import spotify from "../assets/spotify.svg";
 import applepodcasts from "../assets/applepodcasts.svg";
 import amazonmusics from "../assets/amazonmusic.svg";
 import type { ImageMetadata } from "astro";
+import type { ExternalLink } from "../types";
 
 export const siteInfo = {
   title: "Oggi fa bora - il podcast su Trieste",
@@ -12,12 +13,6 @@ export const siteInfo = {
   email: "info@oggifabora.it",
   url: "https://www.oggifabora.it",
 };
-
-export interface ExternalLink {
-  name: string;
-  url: string;
-  logo?: ImageMetadata;
-}
 
 export const socialLinks: ExternalLink[] = [
   {

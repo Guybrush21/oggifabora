@@ -1,9 +1,10 @@
 ---
 import Episode from "../../components/Episode.astro";
-
+import { siteInfo } from "../../data/site-info";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import type { InferGetStaticPropsType } from "astro";
+import type { PageInfo } from "../../types";
 
 export async function getStaticPaths() {
   const episodes = await getCollection("episodes");
@@ -19,8 +20,13 @@ export async function getStaticPaths() {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { episode } = Astro.props;
+
+const meta: PageInfo = {
+  title: episode.data.title,
+  description: episode.data.description,
+};
 ---
 
-<Layout>
+<Layout meta={meta}>
   <Episode episode={episode.data} />
 </Layout>
