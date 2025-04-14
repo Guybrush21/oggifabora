@@ -3,6 +3,14 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import logo from "../assets/logo.webp";
 import Link from "../components/Link.astro";
+import { getCollection } from "astro:content";
+import { formatDistanceToNow, subDays } from "date-fns";
+import { it } from "date-fns/locale";
+const episodes = await getCollection("episodes");
+const last = episodes
+  .sort((e) => e.data.id)
+  .reverse()
+  .at(0);
 ---
 
 <Layout>
@@ -18,6 +26,19 @@ import Link from "../components/Link.astro";
         associazioni e organizzazioni che contribuiscono ogni giorno al
         funzionamento e alla crescita della comunità.
       </p>
+      {
+        last && (
+          <p>
+            Per dire, solamente
+            {formatDistanceToNow(new Date(last.data.published), {
+              locale: it,
+            })}
+            fa abbiamo pubblicato il nostro episodio numero {last.data.id}
+            <Link href={last.id}>{last.data.title}</Link>.
+          </p>
+        )
+      }
+
       <p>
         Ascoltaci su <Link
           href="https://open.spotify.com/show/21XphXWp2fuYShhpgzs6pN"
@@ -25,7 +46,7 @@ import Link from "../components/Link.astro";
           Spotify</Link
         >
         e sulle principali piattaforme di podcast o direttamente su
-        <Link href="/episodes"> questo sito</Link>
+        <Link href="/episodes"> questo sito</Link>.
       </p>
       <Image src={logo} alt="Oggi fa bora" class="mt-4 w-auto rounded-lg" />
     </section>
