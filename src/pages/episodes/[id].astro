@@ -24,6 +24,7 @@ const { episode } = Astro.props;
 const meta: PageInfo = {
   title: episode.data.title,
   description: episode.data.description,
+  url: `${siteInfo.url}/episodes/${episode.id}`,
 };
 ---
 
