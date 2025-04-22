@@ -4,6 +4,6 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.oggifabora.it",
+  site: "https://oggifabora.it",
   integrations: [tailwind(), sitemap()],
 });

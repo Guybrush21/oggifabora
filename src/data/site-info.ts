@@ -11,7 +11,7 @@ export const siteInfo = {
   description:
     "Il podcast che ti racconta quello che fa muovere Trieste e il suo territorio.",
   email: "info@oggifabora.it",
-  url: "https://www.oggifabora.it",
+  url: "https://oggifabora.it",
 };
 
 export const socialLinks: ExternalLink[] = [
