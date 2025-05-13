@@ -17,6 +17,7 @@ const meta: PageInfo = {
       {
         episodes
           .sort((e) => e.data.id)
+          .reverse()
           .map((e) => (
             <li class="my-2">
               <Link href={`/episodes/${e.id}`}>
