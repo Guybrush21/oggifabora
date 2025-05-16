@@ -4,14 +4,31 @@ import Layout from "../layouts/Layout.astro";
 import logo from "../assets/logo.webp";
 import Link from "../components/Link.astro";
 import { getCollection } from "astro:content";
-import { formatDistanceToNow } from "date-fns";
-import { it } from "date-fns/locale";
 const episodes = await getCollection("episodes");
 const last = episodes
   .sort((e) => e.data.id)
   .reverse()
   .at(0);
 ---
+
+<script>
+import { formatDistanceToNow } from "date-fns";
+import { it } from "date-fns/locale";
+
+  class DynamicDate extends HTMLElement {
+    connectedCallback() {
+      const published= this.dataset.published;     if(published)
+      {
+      const formattedDate = formatDistanceToNow(new Date(published), {
+              locale: it,
+            })
+        this.innerHTML = formattedDate;
+      }
+    }
+  }
+
+  customElements.define('dynamic-date', DynamicDate);
+</script>
 
 <Layout>
   <div>
@@ -29,10 +46,7 @@ const last = episodes
       {
         last && (
           <p>
-            Per dire, solamente
-            {formatDistanceToNow(new Date(last.data.published), {
-              locale: it,
-            })}
+        Per dire, solamente <dynamic-date data-published={last.data.published}></dynamic-date> 
             fa abbiamo pubblicato il nostro episodio numero {last.data.id}
 <Link href=`/episodes/${last.id}`>{last.data.title}</Link>.
           </p>
