@@ -1,11 +1,7 @@
 ---
 import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
-const about = {
-  title: "Chi siamo",
-  description:
-    "Teresa Codaglio e Nicholas Pellizer ti portano alla scoperta di chi si prende cura della città di Trieste e del suo territorio. Storie di persone, associazioni e organizzazioni che, magari lontano dai riflettori, contribuiscono ogni giorno al funzionamento e alla crescita della comunità. ",
-};
+
 import { siteInfo, socialLinks } from "../data/site-info";
 import type { PageInfo } from "../types";
 
@@ -18,12 +14,19 @@ const meta: PageInfo = {
 <Layout meta={meta}>
   <article class="flex flex-col gap-4">
     <header>
-      <h2>{about.title}</h2>
+      <h2>Chi siamo</h2>
     </header>
     <p>
-      {about.description}
+      <em>Oggi fa bora</em> è un podcast indipendente ideato e condotto da Teresa
+      Codaglio e Nicholas Pellizer. Nasce dal desiderio di raccontare le tante realtà
+      che ogni giorno fanno funzionare Trieste: persone, enti, associazioni e organizzazioni,
+      a volte conosciute a volte meno, ma che contribuiscono a tenere viva la città.
     </p>
-
+    <p>
+      Intervistiamo chi lavora per il bene della comunità. Abbiamo un debole in
+      particolare per le <span class="text-primary-800">realtà pubbliche</span>:
+      perchè crediamo che siano nostre e che sia un peccato non conoscerle.
+    </p>
     <p>
       Restate aggiornati seguendo il nostro <Link
         href={socialLinks.find((s) => s.name === "Instagram")?.url || "#"}
