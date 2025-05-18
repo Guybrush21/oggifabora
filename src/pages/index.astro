@@ -12,22 +12,22 @@ const last = episodes
 ---
 
 <script>
-import { formatDistanceToNow } from "date-fns";
-import { it } from "date-fns/locale";
+  import { formatDistanceToNow } from "date-fns";
+  import { it } from "date-fns/locale";
 
   class DynamicDate extends HTMLElement {
     connectedCallback() {
-      const published= this.dataset.published;     if(published)
-      {
-      const formattedDate = formatDistanceToNow(new Date(published), {
-              locale: it,
-            })
+      const published = this.dataset.published;
+      if (published) {
+        const formattedDate = formatDistanceToNow(new Date(published), {
+          locale: it,
+        });
         this.innerHTML = formattedDate;
       }
     }
   }
 
-  customElements.define('dynamic-date', DynamicDate);
+  customElements.define("dynamic-date", DynamicDate);
 </script>
 
 <Layout>
@@ -46,9 +46,10 @@ import { it } from "date-fns/locale";
       {
         last && (
           <p>
-        Per dire, solamente <dynamic-date data-published={last.data.published}></dynamic-date> 
+            Per dire, solamente{" "}
+            <dynamic-date data-published={last.data.published} />
             fa abbiamo pubblicato il nostro episodio numero {last.data.id}
-<Link href=`/episodes/${last.id}`>{last.data.title}</Link>.
+            <Link href={`/episodes/${last.id}`}>{last.data.title}</Link>.
           </p>
         )
       }

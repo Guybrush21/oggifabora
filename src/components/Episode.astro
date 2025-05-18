@@ -1,4 +1,5 @@
 ---
+import { Picture } from "astro:assets";
 import type { Episode } from "../content.config";
 interface Props {
   episode: Episode;
@@ -25,6 +26,11 @@ const { episode } = Astro.props;
     </p>
   </header>
 
+  <Picture
+    src={episode.cover}
+    alt={`Copertina episodio: ${episode.title}`}
+    class="rounded-lg"
+  />
   <p>{episode.description}</p>
   <current-episode
     data-title={episode.title}
