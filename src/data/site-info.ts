@@ -3,7 +3,6 @@ import instagram from "../assets/instagram.svg";
 import spotify from "../assets/spotify.svg";
 import applepodcasts from "../assets/applepodcasts.svg";
 import amazonmusics from "../assets/amazonmusic.svg";
-import type { ImageMetadata } from "astro";
 import type { ExternalLink } from "../types";
 
 export const siteInfo = {
@@ -12,6 +11,7 @@ export const siteInfo = {
     "Il podcast che ti racconta quello che fa muovere Trieste e il suo territorio.",
   email: "info@oggifabora.it",
   url: "https://www.oggifabora.it",
+  image: "/logo.webp",
 };
 
 export const socialLinks: ExternalLink[] = [

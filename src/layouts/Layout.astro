@@ -11,6 +11,7 @@ const {
     title: siteInfo.title,
     description: siteInfo.description,
     url: siteInfo.url,
+    image: siteInfo.image,
   },
 } = Astro.props;
 
@@ -38,7 +39,7 @@ const url = canonicalUrl.href;
     <meta property="og:description" content={meta.description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={meta.url} />
-    <meta property="og:image" content="/logo.webp" />
+    <meta property="og:image" content={meta.image} />
 
     <script
       defer

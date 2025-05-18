@@ -8,4 +8,5 @@ export interface PageInfo {
   title: string;
   description: string;
   url?: string;
+  image?: string;
 }
