@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import type { InferGetStaticPropsType } from "astro";
 import type { PageInfo } from "../../types";
+import { getImage } from "astro:assets";
 
 export async function getStaticPaths() {
   const episodes = await getCollection("episodes");
@@ -20,12 +21,13 @@ export async function getStaticPaths() {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { episode } = Astro.props;
+const ogImage = await getImage({ src: episode.data.cover, format: "webp" });
 
 const meta: PageInfo = {
   title: episode.data.title,
   description: episode.data.description,
   url: `${siteInfo.url}/episodes/${episode.id}`,
-  image: episode.data.cover.src,
+  image: ogImage.src,
 };
 ---
 

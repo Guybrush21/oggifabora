@@ -39,7 +39,10 @@ const url = canonicalUrl.href;
     <meta property="og:description" content={meta.description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={meta.url} />
-    <meta property="og:image" content={meta.image} />
+    <meta
+      property="og:image"
+      content={new URL(meta.image, siteInfo.url).toString()}
+    />
 
     <script
       defer
