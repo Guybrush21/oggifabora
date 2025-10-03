@@ -2,6 +2,8 @@ import Parser from "rss-parser";
 import * as fs from "fs/promises";
 import * as path from "path";
 import slugify from "slugify";
+import yaml from "js-yaml";
+
 import type { Episode } from "../src/content.config";
 
 const args = process.argv.slice(2);
@@ -75,19 +77,23 @@ async function saveMarkdown(item: Episode) {
   const slug = slugify(item.title, { lower: true, strict: true });
   const fileName = `${item.id}-${slug}.md`;
 
-  const markdown = `---
-id: ${item.id}
-title: "${item.title}"
-description: "${item.description}"
-url: "${item.url}" 
-image: "${item.image}"
-published: "${item.published}"
-cover: "${item.cover}"
----
-`;
+  const frontmatter = yaml.dump(
+    {
+      id: item.id,
+      title: item.title,
+      description: item.description,
+      url: item.url,
+      image: item.image,
+      published: item.published,
+      cover: item.cover,
+    },
+    { quotingType: '"', forceQuotes: true }, // ensures all strings are quoted
+  );
+
+  const markdown = `---\n${frontmatter}---\n`;
 
   await fs.writeFile(path.join(contentDir, fileName), markdown, {
-    flag: overwriteFlag, // 'wx' flag to ensure the file is created and not overwritte
+    flag: overwriteFlag,
   });
   console.log(`Generated markdown file: ${fileName} for episode ${item.id}`);
 }
